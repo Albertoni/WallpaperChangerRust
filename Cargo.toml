@@ -1,8 +1,9 @@
 [package]
 
-name = "wallpaper_changer_ust"
+name = "wallpaper_changer_rust"
 version = "0.0.1"
 authors = [ "João Vicente Albertoni <joao_albertoni@hotmail.com>" ]
 
 [dependencies]
 wallpaper = "2.0.1"
+systray = "0.3.0"
