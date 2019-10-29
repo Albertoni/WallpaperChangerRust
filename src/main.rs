@@ -26,9 +26,9 @@ fn register_tray_icon() {
     let mut path = std::env::current_dir().ok().unwrap();
     path.push("icon.ico");
     let result = app.set_icon_from_file(&path.to_str().unwrap().to_string());
-    if result.is_err() {
-        // println!("{}", path.display());
-        println!("{}", result.err().unwrap());
+    match result {
+        Err(x) => println!("Couldn't load icon: {}", x),
+        Ok(_) => (),
     }
 
     app.add_menu_item(&"Quit".to_string(), |window| {
