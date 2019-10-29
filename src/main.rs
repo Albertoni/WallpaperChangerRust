@@ -23,7 +23,13 @@ fn register_tray_icon() {
         Err(_) => panic!("Can't create window!")
     }
 
-    app.set_icon_from_file(&".\\icon.ico".to_string()).ok();
+    let mut path = std::env::current_dir().ok().unwrap();
+    path.push("icon.ico");
+    let result = app.set_icon_from_file(&path.to_str().unwrap().to_string());
+    if result.is_err() {
+        // println!("{}", path.display());
+        println!("{}", result.err().unwrap());
+    }
 
     app.add_menu_item(&"Quit".to_string(), |window| {
         window.quit();
