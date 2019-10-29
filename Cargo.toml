@@ -1,6 +1,6 @@
 [package]
 
-name = "WallpaperChangerRust"
+name = "wallpaper_changer_ust"
 version = "0.0.1"
 authors = [ "João Vicente Albertoni <joao_albertoni@hotmail.com>" ]
 
