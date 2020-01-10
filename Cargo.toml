@@ -4,6 +4,13 @@ name = "wallpaper_changer_rust"
 version = "0.0.1"
 authors = [ "João Vicente Albertoni <joao_albertoni@hotmail.com>" ]
 
+# https://github.com/johnthagen/min-sized-rust
+[profile.release]
+panic = 'abort'
+codegen-units = 1
+lto = true
+opt-level = 'z'  # Optimize for size.
+
 [dependencies]
 wallpaper = "2.0.1"
 systray = "0.3.0"

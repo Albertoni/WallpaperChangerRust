@@ -4,6 +4,11 @@ extern crate wallpaper;
 extern crate systray;
 
 use std::{thread, time::Duration};
+use std::alloc::System;
+
+// Uses a less efficient but smaller allocator
+#[global_allocator]
+static A: System = System;
 
 fn main() {
     thread::spawn(|| {
